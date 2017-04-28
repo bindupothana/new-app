@@ -1,0 +1,50 @@
+<md-toolbar color="accent">
+ <span>Angular4 Application</span>
+  
+</md-toolbar>
+ 
+
+<form #userForm="ngForm"  *ngIf="active"  (ngSubmit)="onSubmit()">
+<div class="form-group">
+<md-card >
+   
+  <md-input-container> 
+    <input mdInput placeholder="First Name" dividerColor="accent" required name="firstname">
+      <div ng-messages="Angular4.$error">
+            <div ng-message="required">This is required.</div>
+          </div>
+  </md-input-container>
+
+  
+  <md-input-container>
+    <input mdInput placeholder="Last Name" dividerColor="accent">
+  </md-input-container>
+  <br>
+   <md-input-container class="example-full-width">
+      <textarea mdInput placeholder="Address"></textarea>
+    </md-input-container>
+    <br>
+    <md-input-container class="example-full-width">
+      <textarea mdInput placeholder="Address 2"></textarea>
+    </md-input-container>
+  <br>
+  <md-input-container>
+    <input mdInput placeholder="City" dividerColor="accent">
+  </md-input-container>
+  <md-select placeholder="State" [(ngModel)]="myState">
+   <md-option *ngFor="let state of states" >{{ state.name }}</md-option>
+</md-select>
+<md-input-container>
+    <input mdInput placeholder="Postal Code" dividerColor="accent">
+  </md-input-container>
+  <br>
+
+<button md-raised-button color="primary" ngClick="onSubmit">Submit</button>
+
+
+
+</md-card>
+<form userForm="ngForm"  *ngIf="active"  (ngSubmit)="onSubmit()">
+<div class="form-group">
+</div>
+</form>
